@@ -75,7 +75,7 @@ const Navbar = () => {
             <div className="container mx-auto px-6 py-3">
                 <div className="flex justify-between items-center">
                     <a href="#" className="flex items-center space-x-2" onClick={(e) => scrollTo(e, '#hero')}>
-                        <img src="../src/assets/logo-dinamo.png" alt="Logo de Dinamo" className="w-10 h-15" />
+                        <img src="../src/assets/logo-dinamo.png" alt="Logo de Dinamo" className="w-10 h-10" />
                         <span className="text-2xl font-bold text-slate-800 font-display">Dinamo</span>
                     </a>
                     <div className="hidden md:flex items-center space-x-8">
@@ -441,7 +441,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="col-span-1 md:col-span-2">
                         <a href="#" className="flex items-center space-x-2">
-                            <img src="/dino_logo.png" alt="Logo de Dinamo" className="w-10 h-10" />
+                            <img src="../src/assets/logo-dinamo.png" alt="Logo de Dinamo" className="w-10 h-10" />
                             <span className="text-2xl font-bold text-white font-display">Dinamo</span>
                         </a>
                         <p className="mt-4 max-w-md">Convirtiendo la confusión financiera en confianza para los jóvenes de México.</p>
