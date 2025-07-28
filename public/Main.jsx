@@ -133,7 +133,7 @@ const MainContent = () => {
                         </div>
                     </motion.div>
                     <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative flex justify-center items-center mt-10 md:mt-0">
-                         <img src="dinamo.png" alt="Dinosaurio amigable aprendiendo sobre finanzas" className="relative z-10 w-full max-w-md" />
+                         <img src="../src/assets/dinamo.png" alt="Dinosaurio amigable aprendiendo sobre finanzas" className="relative z-10 w-full max-w-md" />
                     </motion.div>
                 </div>
             </div>
@@ -172,7 +172,7 @@ const MainContent = () => {
             <div className="container mx-auto px-6">
                  <div className="grid md:grid-cols-2 gap-12 items-center">
                     <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative flex justify-center items-center">
-                         <img src="interfaz-captura.jpg" alt="Interfaz de la app Dinamo" className="relative z-10 w-full max-w-sm" />
+                         <img src="../src/assets/interfaz-captura.jpg" alt="Interfaz de la app Dinamo" className="relative z-10 w-full max-w-sm" />
                     </motion.div>
                      <ScrollReveal>
                         <span className="inline-block bg-emerald-100 text-emerald-600 font-semibold px-3 py-1 rounded-full text-sm mb-4">La Evolución Financiera</span>
@@ -310,7 +310,7 @@ const MainContent = () => {
                         </ul>
                     </ScrollReveal>
                     <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative flex justify-center items-center">
-                         <img src="interfaz-chatbot.jpg" alt="Dino Dinero, el asistente de IA" className="relative z-10 w-full max-w-md" />
+                         <img src="../src/assets/interfaz-chatbot.jpg" alt="Dino Dinero, el asistente de IA" className="relative z-10 w-full max-w-md" />
                     </motion.div>
                  </div>
             </div>
@@ -441,7 +441,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="col-span-1 md:col-span-2">
                         <a href="#" className="flex items-center space-x-2">
-                            <img src="logo-dinamo.png" alt="Logo de Dinamo" className="w-10 h-10" />
+                            <img src="../src/assets/logo-dinamo.png" alt="Logo de Dinamo" className="w-10 h-10" />
                             <span className="text-2xl font-bold text-white font-display">Dinamo</span>
                         </a>
                         <p className="mt-4 max-w-md">Convirtiendo la confusión financiera en confianza para los jóvenes de México.</p>
