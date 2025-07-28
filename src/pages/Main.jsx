@@ -75,7 +75,7 @@ const Navbar = () => {
             <div className="container mx-auto px-6 py-3">
                 <div className="flex justify-between items-center">
                     <a href="#" className="flex items-center space-x-2" onClick={(e) => scrollTo(e, '#hero')}>
-                        <img src="../src/assets/logo-dinamo.png" alt="Logo de Dinamo" className="w-10 h-10" />
+                        <img src="logo-dinamo.png" alt="Logo de Dinamo" className="w-10 h-10" />
                         <span className="text-2xl font-bold text-slate-800 font-display">Dinamo</span>
                     </a>
                     <div className="hidden md:flex items-center space-x-8">
