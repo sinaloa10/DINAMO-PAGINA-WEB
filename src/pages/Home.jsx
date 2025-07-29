@@ -42,75 +42,6 @@ const ScrollReveal = ({ children, className }) => {
 
 // --- Componentes de la Página ---
 
-// 1. Navbar
-const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => setIsScrolled(window.scrollY > 10);
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const navLinks = [
-        { name: 'El Problema', href: '#problema' },
-        { name: 'La Solución', href: '#solucion' },
-        { name: 'Dino Dinero', href: '#dino-dinero' },
-        { name: 'Testimonios', href: '#testimonios' },
-        { name: 'FAQ', href: '#faq' },
-    ];
-    
-    const scrollTo = (e, href) => {
-        e.preventDefault();
-        const targetElement = document.querySelector(href);
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
-        setIsOpen(false);
-    };
-
-    return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 shadow-sm backdrop-blur-sm' : 'bg-transparent'}`}>
-            <div className="container mx-auto px-6 py-3">
-                <div className="flex justify-between items-center">
-                    <a href="#" className="flex items-center space-x-2" onClick={(e) => scrollTo(e, '#hero')}>
-                        <img src="../src/assets/logo-dinamo.png" alt="Logo de Dinamo" className="w-10 h-10" />
-                        <span className="text-2xl font-bold text-slate-800 font-display">Dinamo</span>
-                    </a>
-                    <div className="hidden md:flex items-center space-x-8">
-                        {navLinks.map((link) => (
-                            <a key={link.name} href={link.href} onClick={(e) => scrollTo(e, link.href)} className="text-slate-600 hover:text-emerald-500 transition-colors duration-300">{link.name}</a>
-                        ))}
-                        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-emerald-500 text-white font-semibold px-5 py-2 rounded-full shadow-lg shadow-emerald-500/20 hover:bg-emerald-600 transition-all duration-300">
-                            Únete a la beta
-                        </motion.button>
-                    </div>
-                    <div className="md:hidden">
-                        <button onClick={() => setIsOpen(!isOpen)} className="text-slate-700 focus:outline-none">
-                            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="md:hidden bg-white/95 backdrop-blur-sm">
-                        <div className="flex flex-col items-center space-y-4 p-4">
-                            {navLinks.map((link) => (
-                                <a key={link.name} href={link.href} onClick={(e) => scrollTo(e, link.href)} className="text-slate-600 hover:text-emerald-500 transition-colors duration-300 text-lg w-full text-center py-2">{link.name}</a>
-                            ))}
-                            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-emerald-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg shadow-emerald-500/20 hover:bg-emerald-600 transition-all duration-300 w-full">
-                                Únete a la beta
-                            </motion.button>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </nav>
-    );
-};
-
 // 2. Contenido Principal (Modularizado)
 const MainContent = () => {
 
@@ -133,7 +64,7 @@ const MainContent = () => {
                         </div>
                     </motion.div>
                     <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative flex justify-center items-center mt-10 md:mt-0">
-                         <img src="../src/assets/dinamo.png" alt="Dinosaurio amigable aprendiendo sobre finanzas" className="relative z-10 w-full max-w-md" />
+                         <img src="dinamo.png" alt="Dinosaurio amigable aprendiendo sobre finanzas" className="relative z-10 w-full max-w-md" />
                     </motion.div>
                 </div>
             </div>
@@ -172,7 +103,7 @@ const MainContent = () => {
             <div className="container mx-auto px-6">
                  <div className="grid md:grid-cols-2 gap-12 items-center">
                     <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative flex justify-center items-center">
-                         <img src="../src/assets/interfaz-captura.jpg" alt="Interfaz de la app Dinamo" className="relative z-10 w-full max-w-sm" />
+                         <img src="interfaz-captura.jpeg" alt="Interfaz de la app Dinamo" className="relative z-10 w-full max-w-sm" />
                     </motion.div>
                      <ScrollReveal>
                         <span className="inline-block bg-emerald-100 text-emerald-600 font-semibold px-3 py-1 rounded-full text-sm mb-4">La Evolución Financiera</span>
@@ -284,7 +215,7 @@ const MainContent = () => {
                     <ScrollReveal>
                         <span className="inline-block bg-emerald-100 text-emerald-600 font-semibold px-3 py-1 rounded-full text-sm mb-4">Tu Guía Personal</span>
                         <h2 className="text-3xl md:text-4xl font-bold text-slate-800 font-display">Conoce a Dino Dinero.</h2>
-                        <p className="mt-4 text-lg text-slate-600">Dino Dinero es el cerebro de la app, una IA (potenciada por EVA) que hace tu aprendizaje único.</p>
+                        <p className="mt-4 text-lg text-slate-600">Dino Dinero es el cerebro de la app, una IA ( <a href="https://evasalud.com.mx" className="italic text-blue-400" >potenciado por EVA</a> ) que hace tu aprendizaje único.</p>
                         <ul className="mt-6 space-y-4">
                             <li className="flex items-start gap-4">
                                 <div className="bg-emerald-100/50 p-2 rounded-full"><UserCheck className="w-6 h-6 text-emerald-500"/></div>
@@ -310,7 +241,7 @@ const MainContent = () => {
                         </ul>
                     </ScrollReveal>
                     <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative flex justify-center items-center">
-                         <img src="../src/assets/interfaz-chatbot.jpg" alt="Dino Dinero, el asistente de IA" className="relative z-10 w-full max-w-md" />
+                         <img src="interfaz-chatbot.jpeg" alt="Dino Dinero, el asistente de IA" className="relative z-10 w-full max-w-md" />
                     </motion.div>
                  </div>
             </div>
@@ -326,8 +257,8 @@ const MainContent = () => {
             },
             {
                 quote: "Creí que ahorrar era imposible con mi sueldo. El minijuego me abrió los ojos sobre a dónde se iba mi dinero. ¡Ahora sí ahorro de verdad!",
-                name: "Javier M.",
-                role: "Programador Jr."
+                name: "America M.",
+                role: "Programadora Jr."
             },
             {
                 quote: "La mejor parte es Dino Dinero. Es como tener un amigo que sabe mucho de finanzas y te explica con paciencia. 100% recomendada.",
@@ -432,50 +363,6 @@ const MainContent = () => {
         </main>
     );
 };
-
-// 3. Footer
-const Footer = () => {
-    return (
-        <footer className="bg-slate-800 text-slate-300">
-            <div className="container mx-auto px-6 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div className="col-span-1 md:col-span-2">
-                        <a href="#" className="flex items-center space-x-2">
-                            <img src="../src/assets/logo-dinamo.png" alt="Logo de Dinamo" className="w-10 h-10" />
-                            <span className="text-2xl font-bold text-white font-display">Dinamo</span>
-                        </a>
-                        <p className="mt-4 max-w-md">Convirtiendo la confusión financiera en confianza para los jóvenes de México.</p>
-                        <p className="mt-4 text-sm text-slate-400">Hecho en México con <HeartHandshake className="inline w-4 h-4 text-emerald-400" /></p>
-                    </div>
-                    <div>
-                        <h4 className="font-semibold text-white tracking-wider uppercase">Producto</h4>
-                        <ul className="mt-4 space-y-2">
-                            <li><a href="#solucion" className="hover:text-emerald-500 transition-colors">La Solución</a></li>
-                            <li><a href="#dino-dinero" className="hover:text-emerald-500 transition-colors">Dino Dinero</a></li>
-                            <li><a href="#minigame" className="hover:text-emerald-500 transition-colors">Mini-Juego</a></li>
-                            <li><a href="#faq" className="hover:text-emerald-500 transition-colors">FAQ</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="font-semibold text-white tracking-wider uppercase">Legal</h4>
-                        <ul className="mt-4 space-y-2">
-                            <li><a href="#" className="hover:text-emerald-500 transition-colors">Términos de Servicio</a></li>
-                            <li><a href="#" className="hover:text-emerald-500 transition-colors">Política de Privacidad</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="mt-12 border-t border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
-                    <p className="text-sm text-slate-400">&copy; {new Date().getFullYear()} Dinamo. Todos los derechos reservados.</p>
-                    <div className="flex space-x-4 mt-4 sm:mt-0">
-                        <a href="#" className="text-slate-400 hover:text-emerald-500 transition-colors"><Twitter className="w-6 h-6" /></a>
-                        <a href="#" className="text-slate-400 hover:text-emerald-500 transition-colors"><Instagram className="w-6 h-6" /></a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    );
-};
-
 // --- App.jsx (Archivo Raíz) ---
 export default function App() {
     return (
@@ -493,9 +380,7 @@ export default function App() {
             </style>
             <div className="bg-[#FBFBF8] font-sans text-slate-700">
                 <JurassicBackground />
-                <Navbar />
                 <MainContent />
-                <Footer />
             </div>
         </>
     );
