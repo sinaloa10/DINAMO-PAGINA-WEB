@@ -13,7 +13,7 @@ import {
 // --- Elementos visuales y de fondo ---
 
 const JurassicBackground = () => (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-[#FBFBF8]">
+    <div className="absolute inset-0 -z-10 overflow-hidden bg-[#F5F9FF]">
         {/* Patrones sutiles de hojas */}
         <Leaf className="absolute -top-10 -left-10 w-48 h-48 text-emerald-500/5" strokeWidth={0.5} />
         <Leaf className="absolute -bottom-24 -right-12 w-64 h-64 text-emerald-500/5 rotate-45" strokeWidth={0.5} />
@@ -50,15 +50,15 @@ const MainContent = () => {
             <div className="container mx-auto px-6">
                 <div className="grid md:grid-cols-2 gap-10 items-center">
                     <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-                        <span className="inline-block bg-emerald-100 text-emerald-600 font-semibold px-3 py-1 rounded-full text-sm mb-4">Educación Financiera para la Nueva Era</span>
+                        <span className="inline-block bg-blue-100 text-blue-600 font-semibold px-3 py-1 rounded-full text-sm mb-4">Educación Financiera para la Nueva Era</span>
                         <h1 className="text-4xl md:text-6xl font-extrabold text-slate-800 leading-tight font-display">
-                            Tus finanzas, <span className="text-emerald-500">libres de extinción</span>.
+                            Tus finanzas, <span className="text-[#0095FF]">libres de extinción</span>.
                         </h1>
                         <p className="mt-6 text-lg md:text-xl text-slate-600">
                             Dinamo es la app que convierte el miedo al SAT, las deudas y el ahorro en un juego que sí entiendes. Aprende con historias reales y simulaciones divertidas.
                         </p>
                         <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
-                            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-emerald-500 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-emerald-500/30 hover:bg-emerald-600 transition-all duration-300 w-full sm:w-auto">
+                            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-[#0066FF] text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-blue-500/30 hover:bg-[#0055DD] transition-all duration-300 w-full sm:w-auto">
                                 Empezar mi Aventura
                             </motion.button>
                         </div>
@@ -73,9 +73,9 @@ const MainContent = () => {
 
     const ProblemsSection = () => {
         const problems = [
-            { icon: <Landmark className="w-8 h-8 text-amber-500"/>, title: 'Pánico al SAT', description: 'El RFC, las declaraciones y los impuestos se sienten como un meteorito a punto de caer.' },
-            { icon: <CreditCard className="w-8 h-8 text-amber-500"/>, title: 'Deudas Prehistóricas', description: 'Las tarjetas y préstamos te cazan como un T-Rex. Se siente como un laberinto sin salida.' },
-            { icon: <PiggyBank className="w-8 h-8 text-amber-500"/>, title: 'Ahorro Fósil', description: 'Tu sueldo se extingue más rápido que los dinosaurios y ahorrar parece imposible.' },
+            { icon: <Landmark className="w-8 h-8 text-[#0066FF]"/>, title: 'Pánico al SAT', description: 'El RFC, las declaraciones y los impuestos se sienten como un meteorito a punto de caer.' },
+            { icon: <CreditCard className="w-8 h-8 text-[#0066FF]"/>, title: 'Deudas Prehistóricas', description: 'Las tarjetas y préstamos te cazan como un T-Rex. Se siente como un laberinto sin salida.' },
+            { icon: <PiggyBank className="w-8 h-8 text-[#0066FF]"/>, title: 'Ahorro Fósil', description: 'Tu sueldo se extingue más rápido que los dinosaurios y ahorrar parece imposible.' },
         ];
         return (
             <section id="problema" className="py-20 bg-white">
@@ -86,10 +86,10 @@ const MainContent = () => {
                     </ScrollReveal>
                     <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
                         {problems.map((problem) => (
-                            <ScrollReveal key={problem.title} className="bg-amber-50 p-8 rounded-2xl border-2 border-amber-100 text-center transition-transform hover:-translate-y-2">
-                                <div className="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">{problem.icon}</div>
+                            <ScrollReveal key={problem.title} className="bg-blue-50 p-8 rounded-2xl border-2 border-blue-100 text-center transition-transform hover:-translate-y-2">
+                                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">{problem.icon}</div>
                                 <h3 className="text-xl font-bold text-slate-800 font-display">{problem.title}</h3>
-                                <p className="mt-2 text-amber-800">{problem.description}</p>
+                                <p className="mt-2 text-blue-800">{problem.description}</p>
                             </ScrollReveal>
                         ))}
                     </div>
@@ -99,33 +99,33 @@ const MainContent = () => {
     };
 
     const SolutionSection = () => (
-         <section id="solucion" className="py-20">
+         <section id="solucion" className="py-20 bg-[#F5F9FF]">
             <div className="container mx-auto px-6">
                  <div className="grid md:grid-cols-2 gap-12 items-center">
                     <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative flex justify-center items-center">
                          <img src="interfaz-captura.jpeg" alt="Interfaz de la app Dinamo" className="relative z-10 w-full max-w-sm" />
                     </motion.div>
                      <ScrollReveal>
-                        <span className="inline-block bg-emerald-100 text-emerald-600 font-semibold px-3 py-1 rounded-full text-sm mb-4">La Evolución Financiera</span>
+                        <span className="inline-block bg-blue-100 text-blue-600 font-semibold px-3 py-1 rounded-full text-sm mb-4">La Evolución Financiera</span>
                         <h2 className="text-3xl md:text-4xl font-bold text-slate-800 font-display">Aprende finanzas como si fuera un juego.</h2>
                         <p className="mt-4 text-lg text-slate-600">Dinamo convierte la educación financiera en una aventura divertida y relevante para ti:</p>
                         <ul className="mt-6 space-y-4">
                             <li className="flex items-start gap-4">
-                                <div className="bg-emerald-100/50 p-2 rounded-full"><Gamepad2 className="w-6 h-6 text-emerald-500"/></div>
+                                <div className="bg-blue-100/50 p-2 rounded-full"><Gamepad2 className="w-6 h-6 text-[#0066FF]"/></div>
                                 <div>
                                     <h4 className="font-bold text-slate-800">Misiones y Simulaciones</h4>
                                     <p className="text-slate-500">Enfrenta desafíos basados en la vida real, desde declarar impuestos hasta elegir tu primer crédito.</p>
                                 </div>
                             </li>
                              <li className="flex items-start gap-4">
-                                <div className="bg-emerald-100/50 p-2 rounded-full"><Users className="w-6 h-6 text-emerald-500"/></div>
+                                <div className="bg-blue-100/50 p-2 rounded-full"><Users className="w-6 h-6 text-[#0066FF]"/></div>
                                 <div>
                                     <h4 className="font-bold text-slate-800">Basado en Historias Reales</h4>
                                     <p className="text-slate-500">El contenido nace de las dudas y problemas de jóvenes mexicanos como tú.</p>
                                 </div>
                             </li>
                              <li className="flex items-start gap-4">
-                                <div className="bg-emerald-100/50 p-2 rounded-full"><Sparkles className="w-6 h-6 text-emerald-500"/></div>
+                                <div className="bg-blue-100/50 p-2 rounded-full"><Sparkles className="w-6 h-6 text-[#0066FF]"/></div>
                                 <div>
                                     <h4 className="font-bold text-slate-800">Recompensas y Logros</h4>
                                     <p className="text-slate-500">Gana puntos y medallas por cada nuevo conocimiento adquirido. ¡Sube de nivel tus finanzas!</p>
@@ -184,22 +184,22 @@ const MainContent = () => {
                             <div>
                                 <div className="mb-4">
                                     <label className="block font-bold text-slate-700">Renta de Caverna: ${rent}</label>
-                                    <input type="range" min="1000" max="3000" step="100" value={rent} onChange={(e) => setRent(Number(e.target.value))} className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
+                                    <input type="range" min="1000" max="3000" step="100" value={rent} onChange={(e) => setRent(Number(e.target.value))} className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-500" />
                                 </div>
                                 <div className="mb-4">
                                     <label className="block font-bold text-slate-700">Comida (Bayas y Carne): ${food}</label>
-                                    <input type="range" min="500" max="2500" step="100" value={food} onChange={(e) => setFood(Number(e.target.value))} className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
+                                    <input type="range" min="500" max="2500" step="100" value={food} onChange={(e) => setFood(Number(e.target.value))} className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-500" />
                                 </div>
                                 <div>
                                     <label className="block font-bold text-slate-700">Diversión (Jugar con Dinos): ${fun}</label>
-                                    <input type="range" min="0" max="2000" step="100" value={fun} onChange={(e) => setFun(Number(e.target.value))} className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
+                                    <input type="range" min="0" max="2000" step="100" value={fun} onChange={(e) => setFun(Number(e.target.value))} className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-500" />
                                 </div>
                             </div>
                             <div className="bg-white p-6 rounded-lg border border-slate-200 flex flex-col justify-center items-center">
                                 <h4 className="font-bold text-slate-500 text-lg">Huevo para el Futuro</h4>
-                                <p className="text-4xl font-bold text-emerald-500 my-2">${savings}</p>
-                                <p className={`text-sm font-semibold ${savings > 1000 ? 'text-emerald-600' : 'text-amber-600'}`}>{feedback}</p>
-                                <button onClick={handleReset} className="mt-4 text-sm text-slate-500 hover:text-emerald-500">Reiniciar</button>
+                                <p className="text-4xl font-bold text-[#0066FF] my-2">${savings}</p>
+                                <p className={`text-sm font-semibold ${savings > 1000 ? 'text-blue-600' : 'text-[#0066FF]'}`}>{feedback}</p>
+                                <button onClick={handleReset} className="mt-4 text-sm text-slate-500 hover:text-[#0066FF]">Reiniciar</button>
                             </div>
                         </div>
                     </ScrollReveal>
@@ -213,26 +213,26 @@ const MainContent = () => {
             <div className="container mx-auto px-6">
                  <div className="grid md:grid-cols-2 gap-12 items-center">
                     <ScrollReveal>
-                        <span className="inline-block bg-emerald-100 text-emerald-600 font-semibold px-3 py-1 rounded-full text-sm mb-4">Tu Guía Personal</span>
+                        <span className="inline-block bg-blue text-[#0066FF] font-semibold px-3 py-1 rounded-full text-sm mb-4">Tu Guía Personal</span>
                         <h2 className="text-3xl md:text-4xl font-bold text-slate-800 font-display">Conoce a Dino Dinero.</h2>
                         <p className="mt-4 text-lg text-slate-600">Dino Dinero es el cerebro de la app, una IA ( <a href="https://evasalud.com.mx" className="italic text-blue-400" >potenciado por EVA</a> ) que hace tu aprendizaje único.</p>
                         <ul className="mt-6 space-y-4">
                             <li className="flex items-start gap-4">
-                                <div className="bg-emerald-100/50 p-2 rounded-full"><UserCheck className="w-6 h-6 text-emerald-500"/></div>
+                                <div className="bg-blue-100/50 p-2 rounded-full"><UserCheck className="w-6 h-6 text-[#0066FF]"/></div>
                                 <div>
                                     <h4 className="font-bold text-slate-800">Entiende tu Perfil</h4>
                                     <p className="text-slate-500">Analiza tus respuestas y progreso para saber si eres un ahorrador nato, un gastador impulsivo o un futuro inversionista.</p>
                                 </div>
                             </li>
                              <li className="flex items-start gap-4">
-                                <div className="bg-emerald-100/50 p-2 rounded-full"><Rocket className="w-6 h-6 text-emerald-500"/></div>
+                                <div className="bg-blue-100/50 p-2 rounded-full"><Rocket className="w-6 h-6 text-[#0066FF]"/></div>
                                 <div>
                                     <h4 className="font-bold text-slate-800">Crea Actividades Efectivas</h4>
                                     <p className="text-slate-500">Diseña misiones y simulaciones a tu medida. Si te cuesta ahorrar, te dará más retos de ahorro.</p>
                                 </div>
                             </li>
                              <li className="flex items-start gap-4">
-                                <div className="bg-emerald-100/50 p-2 rounded-full"><BrainCircuit className="w-6 h-6 text-emerald-500"/></div>
+                                <div className="bg-blue-100/50 p-2 rounded-full"><BrainCircuit className="w-6 h-6 text-[#0066FF]"/></div>
                                 <div>
                                     <h4 className="font-bold text-slate-800">Acelera tu Aprendizaje</h4>
                                     <p className="text-slate-500">Te explica los temas difíciles con ejemplos que conectan contigo, para que aprendas más rápido y sin aburrirte.</p>
@@ -311,7 +311,7 @@ const MainContent = () => {
                                 <div className="bg-white rounded-xl overflow-hidden border border-slate-200">
                                     <button onClick={() => setActiveIndex(activeIndex === index ? null : index)} className="w-full text-left p-6 flex justify-between items-center hover:bg-slate-50 transition-colors">
                                         <span className="font-semibold text-slate-800">{faq.q}</span>
-                                        <ChevronDown className={`w-6 h-6 text-emerald-500 transition-transform duration-300 ${activeIndex === index ? 'rotate-180' : ''}`} />
+                                        <ChevronDown className={`w-6 h-6 text-blue-500 transition-transform duration-300 ${activeIndex === index ? 'rotate-180' : ''}`} />
                                     </button>
                                     <AnimatePresence>
                                     {activeIndex === index && (
@@ -333,13 +333,13 @@ const MainContent = () => {
         <section id="cta" className="py-20">
             <div className="container mx-auto px-6">
                 <ScrollReveal className="bg-slate-800 rounded-2xl p-10 md:p-16 text-center relative overflow-hidden">
-                    <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-emerald-500/10 rounded-full filter blur-2xl"></div>
-                    <div className="absolute -top-20 -right-20 w-60 h-60 bg-emerald-500/10 rounded-full filter blur-2xl"></div>
+                    <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-[#0066FF] rounded-full filter blur-2xl"></div>
+                    <div className="absolute -top-20 -right-20 w-60 h-60 bg-[#0066FF] rounded-full filter blur-2xl"></div>
                     <div className="relative">
                         <h2 className="text-3xl md:text-4xl font-bold text-white font-display">Evita la extinción financiera.</h2>
                         <p className="mt-4 text-lg text-slate-300 max-w-xl mx-auto">Únete a la lista de espera de la beta y sé de los primeros en transformar tu relación con el dinero. Es gratis, es fácil y es para ti.</p>
                         <div className="mt-10">
-                             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-emerald-500 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-emerald-500/30 hover:bg-emerald-600 transition-all duration-300">
+                             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-[#0055DD] text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-blue-500/30 hover:bg-blue-600 transition-all duration-300">
                                  Quiero unirme a la beta
                             </motion.button>
                         </div>
@@ -378,7 +378,7 @@ export default function App() {
                     }
                 `}
             </style>
-            <div className="bg-[#FBFBF8] font-sans text-slate-700">
+            <div className="bg-[#F5F9FF] font-sans text-slate-700">
                 <JurassicBackground />
                 <MainContent />
             </div>
