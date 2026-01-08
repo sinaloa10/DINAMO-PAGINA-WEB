@@ -38,7 +38,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg--transparent backdrop-blur-md' : 'bg-[#0F2B5B]'}`}>
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg--transparent backdrop-blur-md' : 'bg-white/10'}`}>
             <div className="container mx-auto px-6 py-4">
                 <div className="flex justify-between items-center">
                     <a href="#" className="flex items-center space-x-2" onClick={(e) => scrollTo(e, '#hero')}>
@@ -47,7 +47,7 @@ const Navbar = () => {
                     </a>
                     <div className="hidden md:flex items-center space-x-8">
                         {navLinks.map((link) => (
-                            <a key={link.name} href={link.href} onClick={(e) => scrollTo(e, link.href)} className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-[#0066FF] hover:text-[#0055DD]' : 'text-blue-200 hover:text-white'}`} > {link.name}</a>
+                            <a key={link.name} href={link.href} onClick={(e) => scrollTo(e, link.href)} className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-[#0066FF] hover:text-[#0055DD]' : 'text-blue-500 hover:text-white'}`} > {link.name}</a>
                         ))}
                         <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-[#0066FF] text-white font-semibold px-6 py-2.5 rounded-full shadow-lg shadow-blue-600/30 hover:bg-[#0055DD] transition-all duration-300">
                             Únete a la beta
